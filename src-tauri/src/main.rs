@@ -20,7 +20,7 @@ async fn float_image(
             r#"window.imgPath = 'data:image/png;base64,{}';"#,
             image_data_base64
         );
-        tauri::WindowBuilder::new(&app, "label", tauri::WindowUrl::App("popup.html".into()))
+        tauri::WindowBuilder::new(&app, "popup", tauri::WindowUrl::App("popup.html".into()))
             .initialization_script(&js_code)
             .decorations(false)
             .maximizable(false)
