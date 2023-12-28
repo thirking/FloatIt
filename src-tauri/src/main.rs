@@ -17,24 +17,14 @@ async fn float_image(
 ) -> Result<(), String> {
     if let Ok(image_data_base64) = clipboard.read_image() {
         let js_code = format!(
-            r#"window.addEventListener('DOMContentLoaded',() => {{
-            const img = document.createElement('img');
-            img.onload = function() {{
-                const {{width, height}} = img;
-                window.__TAURI__.window.getCurrent().then(win => {{
-                    win.setSize({{ width, height }}).catch(console.error);
-                }});
-            }};
-            img.setAttribute("data-tauri-drag-region", true);
-            img.src = 'data:image/png;base64,{}';
-            document.body.appendChild(img);
-        }});"#,
+            r#"window.imgPath = 'data:image/png;base64,{}';"#,
             image_data_base64
         );
         tauri::WindowBuilder::new(&app, "label", tauri::WindowUrl::App("popup.html".into()))
             .initialization_script(&js_code)
             .decorations(false)
-            .resizable(true)
+            .maximizable(false)
+            .resizable(false)
             .build()
             .expect("window创建失败");
         Ok(())
