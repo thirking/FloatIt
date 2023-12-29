@@ -3,6 +3,7 @@
 
 use tauri::State;
 use tauri_plugin_clipboard::ClipboardManager;
+use window_shadows::set_shadow;
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
@@ -20,13 +21,15 @@ async fn float_image(
             r#"window.imgPath = 'data:image/png;base64,{}';"#,
             image_data_base64
         );
-        tauri::WindowBuilder::new(&app, "popup", tauri::WindowUrl::App("popup.html".into()))
+        let win =tauri::WindowBuilder::new(&app, "popup", tauri::WindowUrl::App("popup.html".into()))
             .initialization_script(&js_code)
             .decorations(false)
             .maximizable(false)
             .resizable(false)
+            .always_on_top(true)
             .build()
             .expect("window创建失败");
+        set_shadow(&win, true).expect("Unsupported platform!");
         Ok(())
     } else {
         return Err("没有图呀".into());
