@@ -11,6 +11,10 @@
     "version": "0.0.0"
   },
   "tauri": {
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
+    },
     "allowlist": {
       "all": false,
       "window": {
@@ -19,6 +23,12 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "globalShortcut": {
+        "all": true
+      },
+      "notification": {
+        "all": true
       }
     },
     "bundle": {
@@ -38,9 +48,15 @@
     },
     "windows": [
       {
+        "label": "main",
+        "skipTaskbar": true,
+        "visible": false,
         "fullscreen": false,
-        "resizable": true,
-        "title": "floatit",
+        "maximizable": false,
+        "decorations": false,
+        "alwaysOnTop": true,
+        "resizable": false,
+        "title": "FloatIt",
         "width": 800,
         "height": 600
       }

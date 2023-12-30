@@ -9,8 +9,7 @@ export default defineConfig(async () => ({
   build: {
     rollupOptions: {
         input: {
-            index: path.resolve(__dirname, 'index.html'),
-            pupup: path.resolve(__dirname, 'popup.html'),
+            index: path.resolve(__dirname, 'index.html')
         }
     },
   },

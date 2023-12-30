@@ -1,7 +1,7 @@
-# Tauri + Vue 3
+# FloatIt
+This is a small tool just for floating the picture on the screen, and you can scale the picture by rotating the wheel. Wish you have fun with it.
 
-This template should help get you started developing with Tauri + Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# Shortcuts
+`Ctrl+Shift+F1` to float the image from your clipboard
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+`Ctrl+F2` to toggle the image show/hide
