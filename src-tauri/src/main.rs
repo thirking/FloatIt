@@ -48,10 +48,13 @@ fn register_shortcut(app: &mut App) -> Result<(), tauri::Error> {
     let mut shortcuts = app_handle.global_shortcut_manager();
     // Only register if we haven't already assigned something to
     // this key combo
-    let app_copy = app_handle.clone();
     if !shortcuts.is_registered(FLOATSHORTCUT)? {
+        let app_handle = app.handle();
         shortcuts.register(FLOATSHORTCUT, move || float_image(&app_handle))?;
-        shortcuts.register(TOGGLESHORTCUT, move || toggle_main_window(&app_copy))?;
+    }
+    if !shortcuts.is_registered(TOGGLESHORTCUT)? {
+        let app_handle = app.handle();
+        shortcuts.register(TOGGLESHORTCUT, move || toggle_main_window(&app_handle))?;
     }
     Ok(())
 }
