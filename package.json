@@ -1,11 +1,13 @@
 {
   "name": "floatit",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "tauri dev",
+    "web:dev": "vite",
+    "build": "tauri build",
+    "web:build": "vite build",
     "preview": "vite preview",
     "tauri": "tauri"
   },
