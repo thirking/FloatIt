@@ -10,12 +10,12 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "vue": "^3.3.4",
-    "@tauri-apps/api": "^1.5.2"
+    "@tauri-apps/api": "^1.6.0",
+    "vue": "^3.4.38"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.2.3",
-    "vite": "^4.4.4",
-    "@tauri-apps/cli": "^1.5.7"
+    "@tauri-apps/cli": "^1.6.1",
+    "@vitejs/plugin-vue": "^4.6.2",
+    "vite": "^4.5.3"
   }
 }
